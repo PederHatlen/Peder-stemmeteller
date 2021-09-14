@@ -11,7 +11,7 @@
     </head>
     <body>
         <header><h1>Stemmeteller</h1></header>
-        <form method="post" action="/post.php">
+        <form method="post" action="/PHP/post.php">
             <input type="number" name="parti_id">
             <input type="submit">
         </form>
