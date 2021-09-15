@@ -1,16 +1,51 @@
+html, body{
+    height: 100%;
+}
 body{
-    padding: 0;
+    display: grid;
     margin: 0 auto;
     width: 75%;
-    background-color: #111;
+    background-color: #000;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     color: white;
+    grid-template-columns: 1fr;
+    grid-template-rows: 5rem 0.5fr 1fr 2rem;
+    grid-template-areas:
+        'Header'
+        'Vote'
+        'Results'
+        'Footer';
 }
 header{
     text-align: center;
-    background-color: #555;
-    padding: 1em 0;
+    background-color: #444;
+    padding: 0 0.75rem;
+    grid-area: Header;
+    display: flex;
+    align-items:center;
+    justify-content:center;
 }
-h1{
-    margin: 0;
+h1, h2{margin: 0;}
+
+#vote{
+    grid-area: Vote;
+    padding: 0.75rem;
+    background-color: #333;
+}
+#results{
+    grid-area: Results;
+    padding: 0.75rem;
+    background-color: #222;
+}
+footer{
+    grid-area: Footer;
+    padding: 0 0.75rem;
+    background-color: #111;
+    display: flex;
+    align-items:center;
+}
+
+.subheader{
+    font-size: 0.75rem;
+    font-style: italic;
 }
