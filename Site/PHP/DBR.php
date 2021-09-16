@@ -12,42 +12,56 @@ function connect()
     if (!$con) {
         die("Connection failed: " . mysqli_connect_error());
     }
+
+    //Angi UTF-8 som tegnsett
+    $con->set_charset("utf8");
+
     return $con;
 }
 
-function addVote($var)
+function addVote($parti)
 {
     $con = connect();
 
-    $sql = "UPDATE partier set stemmer = stemmer + 1 where parti = '$var'";
+    $sql = "UPDATE partier set stemmer = stemmer + 1 where parti = '$parti'";
 
     if (mysqli_query($con, $sql)) {
         echo "Stemmen er telt!";
     } else {
-        echo "Error updating record: " . mysqli_error($con);
+        echo "Det oppsto en feil: " . mysqli_error($con);
     }
     $con->close();
 }
 
-function retrieve()
+function retrieve($subjekt)
+{
+    $verdier = array();
+    $con = connect();
+
+    $sql = "SELECT $subjekt FROM partier";
+    $resultat = $con->query($sql);
+
+    $con->close();
+
+    while($rad = $resultat->fetch_assoc()) {
+        //lager variabler med resultatet fra spørringen
+        $verdi = $rad[$subjekt];
+        
+        array_push($verdier, $verdi);
+    }
+    
+    return $verdier;
+}
+
+function retrieveSelected()
 {
     $con = connect();
 
-    //Angi UTF-8 som tegnsett
-    $con->set_charset("utf8");
-    $sql = "SELECT * FROM partier";
+    $sql = "SELECT parti FROM partier";
     $resultat = $con->query($sql);
-    
-    //Skriver ut innholdet i tabellen
+
     while($rad = $resultat->fetch_assoc()) {
-
-        //lager variabler medresultatet fra spørringen
         $parti = $rad["parti"];
-        $stemmer = $rad["stemmer"];
-
-        
-        //Skriver ut innholdet i variablene
-        echo "<option value=\"$parti\">$parti</option>";
     }
 }
 ?>

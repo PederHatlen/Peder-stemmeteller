@@ -9,7 +9,7 @@ body{
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     color: white;
     grid-template-columns: 1fr;
-    grid-template-rows: 5rem auto 1fr 2rem;
+    grid-template-rows: 5rem auto 1fr 3rem;
     grid-template-areas:
         'Header'
         'Vote'
@@ -36,6 +36,8 @@ h1, h2{margin: 0;}
     grid-area: Results;
     padding: 0.75rem;
     background-color: #222;
+    display: flex;
+    flex-direction: column;
 }
 footer{
     grid-area: Footer;
@@ -44,8 +46,29 @@ footer{
     display: flex;
     align-items:center;
 }
+footer span{
+    font-size: 1.2rem;
+}
 
 .subheader{
     font-size: 0.75rem;
     font-style: italic;
+}
+#resultCharts{
+    display: flex;
+    padding: 0.75rem 0 0 0;
+    margin: 0;
+    width: 100%;
+    height: auto;
+    flex-grow: 1;
+}
+.chartDIV{
+    width: 50%;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+@media screen and (orientation:portrait) {
+    body{width: 100%;}
+    #resultCharts{flex-direction: column;}
 }

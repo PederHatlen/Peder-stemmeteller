@@ -1,20 +1,34 @@
-let body = document.body;
+let partiValgEL = document.querySelector("#partiValg");
 
-let Width;
-let Height;
-
-window.onresize = setup;
-setup()
-
-function setup() {
-    Width = window.innerWidth;
-    Height = window.innerHeight;
-
-    easyReading((Width > Height? true:false));
+for (let i = 0; i < partier.length; i++) {
+    let optionEL = document.createElement("option");
+    optionEL.setAttribute("value", partier[i]);
+    optionEL.innerHTML = partier[i]
+    partiValgEL.appendChild(optionEL)
 }
 
 
-function easyReading(turnOn){
+//Diagram oppsett ting.
+const PC_data = {
+    labels: partierUN,
+    datasets: [{
+        label: 'My First Dataset',
+        data: stemmerUN,
+        backgroundColor: [
+        'rgb(255, 99, 132)',
+        'rgb(54, 162, 235)',
+        'rgb(255, 205, 255)'
+        ],
+        hoverOffset: 0,
+        color: '#FFFFFF'
+    }]
+};
+const PC_config = {
+    type: 'pie',
+    data: PC_data,
+};
 
-    body.style.width = (turnOn? "":"100%");
-}
+var pieChart = new Chart(
+    document.querySelector("#pieChart_Canvas"),
+    PC_config
+);
