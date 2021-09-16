@@ -9,7 +9,7 @@ body{
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     color: white;
     grid-template-columns: 1fr;
-    grid-template-rows: 5rem 0.5fr 1fr 2rem;
+    grid-template-rows: 5rem auto 1fr 2rem;
     grid-template-areas:
         'Header'
         'Vote'
