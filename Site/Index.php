@@ -49,8 +49,9 @@
                 <input type="submit">
             </form>
         </div>
-        <div id="results">
+        <div id="resultater">
             <h2>Resultat <span class="subheader">(Ville ikke vært her på ekte)</span></h2>
+            <span id="resultatInfo"></span>
             <div id="resultCharts">
                 <div class="chartDIV">
                     <canvas id="pieChart_Canvas"></canvas>

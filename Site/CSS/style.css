@@ -32,7 +32,7 @@ h1, h2{margin: 0;}
     padding: 0.75rem;
     background-color: #333;
 }
-#results{
+#resultater{
     grid-area: Results;
     padding: 0.75rem;
     background-color: #222;
@@ -61,6 +61,7 @@ footer span{
     width: 100%;
     height: auto;
     flex-grow: 1;
+    flex-direction: column;
 }
 .chartDIV{
     width: 50%;
@@ -70,5 +71,4 @@ footer span{
 
 @media screen and (orientation:portrait) {
     body{width: 100%;}
-    #resultCharts{flex-direction: column;}
 }

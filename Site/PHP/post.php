@@ -8,7 +8,7 @@
 
         <link rel="stylesheet" href="/CSS/post.css">
 
-        <meta http-equiv="refresh" content="2; URL=/index.php"/>
+        <meta http-equiv="refresh" content="1; URL=/index.php"/>
     </head>
     <body>
         <?php
