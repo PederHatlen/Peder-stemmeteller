@@ -46,22 +46,10 @@ function retrieve($subjekt)
     while($rad = $resultat->fetch_assoc()) {
         //lager variabler med resultatet fra spørringen
         $verdi = $rad[$subjekt];
-        
+
         array_push($verdier, $verdi);
     }
     
     return $verdier;
-}
-
-function retrieveSelected()
-{
-    $con = connect();
-
-    $sql = "SELECT parti FROM partier";
-    $resultat = $con->query($sql);
-
-    while($rad = $resultat->fetch_assoc()) {
-        $parti = $rad["parti"];
-    }
 }
 ?>
