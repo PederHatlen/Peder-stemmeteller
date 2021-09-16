@@ -8,15 +8,15 @@
 
         <link rel="stylesheet" href="/CSS/post.css">
 
-        <!-- <meta http-equiv="refresh" content="2; URL=/index.php"/> -->
+        <meta http-equiv="refresh" content="2; URL=/index.php"/>
     </head>
     <body>
         <?php
-        include 'DB.repo';
+        include 'DBR.php';
 
         if ($_SERVER["REQUEST_METHOD"] == "POST") {
             // collect value of input field
-            $parti = $_POST['parti'];
+            $parti = $_POST['partivalg'];
             if (empty($parti)) {
                 addVote("Blankt");
             } else {

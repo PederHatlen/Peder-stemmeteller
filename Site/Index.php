@@ -12,16 +12,19 @@
     <body>
         <header><h1>Stemmeteller</h1></header>
         <div id="vote">
-            <h2>Stemm</h2>
+            <h2>Stem</h2>
             <form method="post" action="/PHP/post.php">
-                <select name="parti_id" id="parti_id">
-                    
+                <select name="partivalg" id="partiValg">
+                    <?php
+                        include 'PHP/DBR.php';
+                        retrieve();
+                    ?>
                 </select>
                 <input type="submit">
             </form>
         </div>
         <div id="results">
-            <h2>Resultat <span class="subheader">(Ville ikke vert her på ekte)</span></h2>
+            <h2>Resultat <span class="subheader">(Ville ikke vært her på ekte)</span></h2>
         </div>
         <footer>
             <span> Laget av Peder</span>
