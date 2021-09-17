@@ -3,9 +3,9 @@ CREATE DATABASE stemmetellerdb;
 USE stemmetellerdb;
 
 CREATE TABLE partier (
-    parti_id int AUTO_INCREMENT,
+    parti_id INT AUTO_INCREMENT,
     parti VARCHAR(255) NOT NULL,
-    partikode Varchar(10) NOT NULL,
-    stemmer int(255) default 0,
+    partikode VARCHAR(10) NOT NULL,
+    stemmer INT(255) DEFAULT 0,
     PRIMARY KEY (parti_id)
 );

@@ -12,7 +12,7 @@ INSERT INTO `partier`(`parti`, `partikode`) VALUES ('Industri- og Næringspartie
 INSERT INTO `partier`(`parti`, `partikode`) VALUES ('Kristelig Folkeparti', 'KRF');
 INSERT INTO `partier`(`parti`, `partikode`) VALUES ('Kystpartiet', 'KYST');
 INSERT INTO `partier`(`parti`, `partikode`) VALUES ('Liberalistene', 'LIBS');
-INSERT INTO `partier`(`parti`, `partikode`) VALUES ('Miløpartiet De Grønne', 'MDG');
+INSERT INTO `partier`(`parti`, `partikode`) VALUES ('Miljøpartiet De Grønne', 'MDG');
 INSERT INTO `partier`(`parti`, `partikode`) VALUES ('Norges Kommunistiske Parti', 'NKP');
 INSERT INTO `partier`(`parti`, `partikode`) VALUES ('Partiet De Kristne', 'KRISTNE');
 INSERT INTO `partier`(`parti`, `partikode`) VALUES ('Partiet Sentrum', 'PS');
