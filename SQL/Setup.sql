@@ -1,3 +1,7 @@
+CREATE DATABASE stemmetellerdb;
+
+USE stemmetellerdb;
+
 CREATE TABLE partier (
     parti_id int AUTO_INCREMENT,
     parti VARCHAR(255) NOT NULL,

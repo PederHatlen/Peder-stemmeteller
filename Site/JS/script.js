@@ -8,6 +8,9 @@ for (let i = 0; i < partier.length; i++) {
     optionEL.innerHTML = partier[i]
     partiValgEL.appendChild(optionEL)
 }
+window.onresize = function() {
+    drawChart();
+}
 
 // I tilfelle det ikke er noen stemmer, vis informasjon og sjul diagrammet
 if (partierUN.length == 0) {
@@ -31,7 +34,7 @@ function drawChart() {
     var data = google.visualization.arrayToDataTable(piechartData);
 
     // Optional; add a title and set the width and height of the chart
-    var options = {"backgroundColor":"transparent", "height":"100%"};
+    var options = {"backgroundColor":"transparent", "height":"100%", "width":"100%"};
 
     // Display the chart inside the <div> element with id="piechart"
     var chart = new google.visualization.PieChart(document.getElementById('piechart'));
