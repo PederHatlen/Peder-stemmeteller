@@ -1,2 +1,2 @@
 # Peder-stemmeteller
-Yee-Yee ass stemmeteller
+Min (Peder sin), stemmeteller.
