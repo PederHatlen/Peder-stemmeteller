@@ -1,6 +1,7 @@
 let partiValgEL = document.querySelector("#partiValg");
 let resultatInfoEL = document.querySelector("#resultatInfo");
 
+// legge til muligheter til select inputen i index, fra data hentet i head
 for (let i = 0; i < partier.length; i++) {
     let optionEL = document.createElement("option");
     optionEL.setAttribute("value", partier[i]);
@@ -8,34 +9,31 @@ for (let i = 0; i < partier.length; i++) {
     partiValgEL.appendChild(optionEL)
 }
 
+// I tilfelle det ikke er noen stemmer, vis informasjon og sjul diagrammet
 if (partierUN.length == 0) {
-    resultatInfoEL.innerHTML += "<b>Ingen stemmer å vise, men det kan endres!</b>"
+    resultatInfoEL.innerHTML = "<b>Ingen stemmer å vise, men det kan endres!</b>"
+    document.querySelector("#resultCharts").style.display = "none";
 }
 
 
-//Diagram oppsett ting.
-const PC_data = {
-    labels: partierUN,
-    datasets: [{
-        label: 'My First Dataset',
-        data: stemmerUN,
-        backgroundColor: [
-        'rgb(255, 99, 132)',
-        'rgb(54, 162, 235)',
-        'rgb(255, 205, 255)'
-        ],
-        hoverOffset: 0
-    }]
-};
-const PC_config = {
-    type: 'pie',
-    data: PC_data,
-    options: {
-        color: '#FFF'
-    }
-};
+/////////////////////////
+// Google Charts Setup //
+/////////////////////////
+//Setup kode er hentet fra w3-schools med noe modifikasjon.
 
-var pieChart = new Chart(
-    document.querySelector("#pieChart_Canvas"),
-    PC_config
-);
+// Load google charts
+google.charts.load('current', {'packages':['corechart']});
+google.charts.setOnLoadCallback(drawChart);
+
+
+// Draw the chart and set the chart values
+function drawChart() {
+    var data = google.visualization.arrayToDataTable(piechartData);
+
+    // Optional; add a title and set the width and height of the chart
+    var options = {"backgroundColor":"transparent", "height":"100%"};
+
+    // Display the chart inside the <div> element with id="piechart"
+    var chart = new google.visualization.PieChart(document.getElementById('piechart'));
+    chart.draw(data, options);
+}

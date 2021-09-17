@@ -8,20 +8,17 @@
 
         <link rel="stylesheet" href="/CSS/post.css">
 
+        <!-- Går tilbake til index etter 1. sekund -->
         <meta http-equiv="refresh" content="1; URL=/index.php"/>
     </head>
     <body>
         <?php
         include 'DBR.php';
 
+        // Hente data fra post dataen og legge til stemmen, hvis det var post data.
         if ($_SERVER["REQUEST_METHOD"] == "POST") {
-            // collect value of input field
             $parti = $_POST['partivalg'];
-            if (empty($parti)) {
-                addVote("Blankt");
-            } else {
-                addVote($parti);
-            }
+            addVote($parti);
         }
         ?>
     </body>

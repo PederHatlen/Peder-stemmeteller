@@ -1,3 +1,4 @@
+/* Body, head */
 html, body{
     height: 100%;
 }
@@ -16,6 +17,8 @@ body{
         'Results'
         'Footer';
 }
+
+/* De forskjellige indelingene av nettsiden */
 header{
     text-align: center;
     background-color: #444;
@@ -25,8 +28,6 @@ header{
     align-items:center;
     justify-content:center;
 }
-h1, h2{margin: 0;}
-
 #vote{
     grid-area: Vote;
     padding: 0.75rem;
@@ -46,20 +47,24 @@ footer{
     display: flex;
     align-items:center;
 }
+
+/* Mindre deler, tekst og lignende */
+h1, h2{margin: 0;}
+
 footer span{
     font-size: 1.2rem;
 }
-
 .subheader{
     font-size: 0.75rem;
     font-style: italic;
 }
+
+
+/* Diagramm ting container elementer o.l. */
 #resultCharts{
     display: flex;
     padding: 0.75rem 0 0 0;
-    margin: 0;
     width: 100%;
-    height: auto;
     flex-grow: 1;
     flex-direction: column;
 }
@@ -69,6 +74,13 @@ footer span{
     margin: 0 auto;
 }
 
+#piechart{height: 100%;}
+
+text{fill: #FFFFFF !important;}
+.google-visualization-tooltip path{fill: #222;}
+
+
+/* I tilfelle portrettmodus (Telefon eller rar skjerm), skru av tomt område på sidene */
 @media screen and (orientation:portrait) {
     body{width: 100%;}
 }

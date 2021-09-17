@@ -1,4 +1,10 @@
+<!-- 
+    DataBase Repo
+    Her er alle php in - out funksjonene.
+-->
+
 <?php
+// Funksjon som løager en tilkobling til serveren, brukes egentlig bare i de andre funksjonene
 function connect()
 {
     $servername = "localhost";
@@ -19,34 +25,36 @@ function connect()
     return $con;
 }
 
+//Legge til en stemme på det partiet i input variabelen.
 function addVote($parti)
 {
     $con = connect();
 
+    //sql koden
     $sql = "UPDATE partier set stemmer = stemmer + 1 where parti = '$parti'";
+    
+    //gjøre selve opperasjonen + sjekke om det virket.
+    if (mysqli_query($con, $sql)) {echo "Stemmen er telt!";}
+    else {echo "Det oppsto en feil: " . mysqli_error($con);}
 
-    if (mysqli_query($con, $sql)) {
-        echo "Stemmen er telt!";
-    } else {
-        echo "Det oppsto en feil: " . mysqli_error($con);
-    }
     $con->close();
 }
 
 function retrieve($subjekt)
 {
+    //verdi array som blir returnert
     $verdier = array();
     $con = connect();
 
     $sql = "SELECT $subjekt FROM partier";
+    //Gjennomfør spørringen
     $resultat = $con->query($sql);
 
     $con->close();
 
+    //Går gjennom alle variablene og legger det til i verdier arrayen.
     while($rad = $resultat->fetch_assoc()) {
-        //lager variabler med resultatet fra spørringen
         $verdi = $rad[$subjekt];
-
         array_push($verdier, $verdi);
     }
     
