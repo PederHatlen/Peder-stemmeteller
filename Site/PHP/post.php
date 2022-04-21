@@ -9,7 +9,7 @@
         <link rel="stylesheet" href="/CSS/post.css">
 
         <!-- Går tilbake til index etter 1 sekund -->
-        <meta http-equiv="refresh" content="1; URL=/index.php"/>
+        <meta http-equiv="refresh" content="1; URL=../index.php"/>
     </head>
     <body>
         <?php

@@ -4,9 +4,8 @@
 -->
 
 <?php
-// Funksjon som løager en tilkobling til serveren, brukes egentlig bare i de andre funksjonene
-function connect()
-{
+// Funksjon som lager en tilkobling til serveren, brukes egentlig bare i de andre funksjonene
+function connect() {
     $servername = "localhost";
     $username = "root";
     $password = "";
@@ -26,8 +25,7 @@ function connect()
 }
 
 //Legge til en stemme på det partiet i input variabelen.
-function addVote($parti)
-{
+function addVote($parti) {
     $con = connect();
 
     //sql koden
@@ -40,8 +38,7 @@ function addVote($parti)
     $con->close();
 }
 
-function retrieve($subjekt)
-{
+function retrieve($subjekt) {
     //verdi array som blir returnert
     $verdier = array();
     $con = connect();

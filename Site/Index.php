@@ -50,7 +50,7 @@
         <div id="vote">
             <h2>Stem</h2>
             <!-- Form med post til PHP/post.php, blir automatisk populert av script.js -->
-            <form method="post" action="/PHP/post.php">
+            <form method="post" action="PHP/post.php">
                 <select name="partivalg" id="partiValg"></select>
                 <input type="submit">
             </form>
